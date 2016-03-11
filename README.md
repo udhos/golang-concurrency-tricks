@@ -1,1 +1,1 @@
-# golang-concurrency-tricks
+# Golang Concurrency Tricks
