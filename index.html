@@ -9,6 +9,8 @@
 
 <h2>Channel Hints</h2>
 
+See also: <a href="http://www.slideshare.net/cloudflare/a-channel-compendium">http://www.slideshare.net/cloudflare/a-channel-compendium</a>
+
 1. Do not close a channel from a receiver goroutine. Closing the channel from a receiver could make future sender goroutines to panic.
 
 2. If a channel has multiple senders, do not close the channel from a sender goroutine. Closing the channel from a sender could make future sender goroutine to panic.
