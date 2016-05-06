@@ -41,6 +41,9 @@ See also: <a href="http://www.slideshare.net/cloudflare/a-channel-compendium">ht
   <li>
 <p>7. Beware: one sender goroutine risks blocking indefinitely when writing on a channel if there is no goroutine left receiving from it.</p>
 </li>
+  <li>
+<p>8. When designing a goroutine which provides service throught channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
+</li>
 </ul>
 
 <hr>
