@@ -9,8 +9,6 @@
 
 <h2>Channel Hints</h2>
 
-See also: <a href="http://www.slideshare.net/cloudflare/a-channel-compendium">http://www.slideshare.net/cloudflare/a-channel-compendium</a>
-
 <ul>
   <li>
 <p>1. Do not close a channel from a receiver goroutine. Closing the channel from a receiver could make future sender goroutines to panic.</p>
@@ -44,6 +42,16 @@ See also: <a href="http://www.slideshare.net/cloudflare/a-channel-compendium">ht
 </li>
   <li>
 <p>8. When designing a goroutine which provides service throught channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
+</li>
+</ul>
+
+<h3>See also:</h3>
+<ul>
+<li>
+  <a href="http://www.slideshare.net/cloudflare/a-channel-compendium">http://www.slideshare.net/cloudflare/a-channel-compendium</a>
+</li>
+<li>
+<a href="https://github.com/golang/go/wiki/LearnConcurrency">https://github.com/golang/go/wiki/LearnConcurrency</a>
 </li>
 </ul>
 
