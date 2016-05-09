@@ -45,7 +45,22 @@
 </li>
 </ul>
 
-<h3>See also:</h3>
+<h2>Goroutine Hints</h2>
+
+<ul>
+  <li>
+    <p>
+      1. Only one goroutine accessing a piece data is good practice.
+    </p>
+    <q>
+      In particular, consider structuring your program so that only one goroutine at a time is ever responsible for a particular piece of data.
+    </q>
+    <br>
+    <a href="https://golang.org/doc/faq#What_operations_are_atomic_What_about_mutexes">https://golang.org/doc/faq#What_operations_are_atomic_What_about_mutexes</a>
+  </li>
+</ul>
+
+<h2>See also:</h2>
 <ul>
 <li>
   <a href="http://www.slideshare.net/cloudflare/a-channel-compendium">http://www.slideshare.net/cloudflare/a-channel-compendium</a>
