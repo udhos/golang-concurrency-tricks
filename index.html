@@ -11,37 +11,37 @@
 
 <ul>
   <li>
-<p>1. Do not close a channel from a receiver goroutine. Closing the channel from a receiver could make future sender goroutines to panic.</p>
+<p>C1. Do not close a channel from a receiver goroutine. Closing the channel from a receiver could make future sender goroutines to panic.</p>
   </li>
   <li>
-    <p>2. If a channel has multiple senders, do not close the channel from a sender goroutine. Closing the channel from a sender could make future sender goroutine to panic.</p>
+    <p>C2. If a channel has multiple senders, do not close the channel from a sender goroutine. Closing the channel from a sender could make future sender goroutine to panic.</p>
     <p>Alternatively, coordinate senders so that only the last sender to leave closes the channel (for instance by using either atomic int or sync.WaitGroup)</p>
   </li>
   <li>
-<p>3. It is not required to close an unused channel. If no goroutine is left referencing the channel, it will be gargabe collected.</p>
+<p>C3. It is not required to close an unused channel. If no goroutine is left referencing the channel, it will be gargabe collected.</p>
 <br>
 <q>Note that it is only necessary to close a channel if the receiver is looking for a close.  Closing the channel is a control signal on the channel indicating that no more data follows.</q>
 <br>
 <a href="https://groups.google.com/forum/#!msg/golang-nuts/pZwdYRGxCIk/qpbHxRRPJdUJ">https://groups.google.com/forum/#!msg/golang-nuts/pZwdYRGxCIk/qpbHxRRPJdUJ</a>
   </li>
   <li>
-<p>4. Do not close a channel more than once because it would panic.</p>
+<p>C4. Do not close a channel more than once because it would panic.</p>
   </li>
   <li>
-<p>5. Channels work better enclosed in a select.</p>
+<p>C5. Channels work better enclosed in a select.</p>
 <br>
 <q>If you are ever using a channel outside of a select in production code, you are probably doing it wrong.</q>
 <br>
 <a href="https://groups.google.com/d/msg/golang-nuts/LM648yrPpck/j5eHsPc2AwAJ">https://groups.google.com/d/msg/golang-nuts/LM648yrPpck/j5eHsPc2AwAJ</a>
   </li>
   <li>
-<p>6. If you need bidirectional communication between two goroutines, consider using two unidirectional channels. Then any side will be able to use the close idiom to signal termination.</p>
+<p>C6. If you need bidirectional communication between two goroutines, consider using two unidirectional channels. Then any side will be able to use the close idiom to signal termination.</p>
   </li>
   <li>
-<p>7. Beware: one sender goroutine risks blocking indefinitely when writing on a channel if there is no goroutine left receiving from it.</p>
+<p>C7. Beware: one sender goroutine risks blocking indefinitely when writing on a channel if there is no goroutine left receiving from it.</p>
 </li>
   <li>
-<p>8. When designing a goroutine which provides service throught channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
+<p>C8. When designing a goroutine which provides service throught channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
 </li>
 </ul>
 
@@ -50,7 +50,7 @@
 <ul>
   <li>
     <p>
-      1. Only one goroutine accessing a piece of data is good practice.
+      G1. Only one goroutine accessing a piece of data is good practice.
     </p>
     <q>
       In particular, consider structuring your program so that only one goroutine at a time is ever responsible for a particular piece of data.
