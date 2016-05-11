@@ -43,6 +43,15 @@
   <li>
 <p>C8. When designing a goroutine which provides service throught channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
 </li>
+  <li>
+    <p>C9. Keep Dave Cheney's Four Channel Axioms in mind:</p>
+    <ul>
+      <li>A1. A send to a nil channel blocks forever.</li>
+      <li>A2. A receive from a nil channel blocks forever.</li>
+      <li>A3. A send to a closed channel panics.</li>
+      <li>A4. A receive from a closed channel returns the zero value immediately.</li>
+      </ul>
+</li>
 </ul>
 
 <h2>Goroutine Hints</h2>
@@ -67,6 +76,9 @@
 </li>
 <li>
 <a href="https://github.com/golang/go/wiki/LearnConcurrency">https://github.com/golang/go/wiki/LearnConcurrency</a>
+</li>
+<li>
+  <a href="http://dave.cheney.net/2014/03/19/channel-axioms">http://dave.cheney.net/2014/03/19/channel-axioms</a>
 </li>
 </ul>
 
