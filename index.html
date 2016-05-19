@@ -19,7 +19,6 @@
   </li>
   <li>
 <p>C3. It is not required to close an unused channel. If no goroutine is left referencing the channel, it will be gargabe collected.</p>
-<br>
 <q>Note that it is only necessary to close a channel if the receiver is looking for a close.  Closing the channel is a control signal on the channel indicating that no more data follows.</q>
 <br>
 <a href="https://groups.google.com/forum/#!msg/golang-nuts/pZwdYRGxCIk/qpbHxRRPJdUJ">https://groups.google.com/forum/#!msg/golang-nuts/pZwdYRGxCIk/qpbHxRRPJdUJ</a>
@@ -29,7 +28,6 @@
   </li>
   <li>
 <p>C5. Channels work better enclosed in a select.</p>
-<br>
 <q>If you are ever using a channel outside of a select in production code, you are probably doing it wrong.</q>
 <br>
 <a href="https://groups.google.com/d/msg/golang-nuts/LM648yrPpck/j5eHsPc2AwAJ">https://groups.google.com/d/msg/golang-nuts/LM648yrPpck/j5eHsPc2AwAJ</a>
