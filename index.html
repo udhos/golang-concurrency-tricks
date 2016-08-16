@@ -45,13 +45,13 @@
 <a href="https://groups.google.com/d/msg/golang-nuts/LM648yrPpck/j5eHsPc2AwAJ">https://groups.google.com/d/msg/golang-nuts/LM648yrPpck/j5eHsPc2AwAJ</a>
   </li>
   <li>
-<p>C6. If you need bidirectional communication between two goroutines, consider using two unidirectional channels. Then any side will be able to use the close idiom to signal termination.</p>
+<p>C6. If you need bidirectional communication between two goroutines, consider using two unidirectional channels. Thus both channel sides will be able to use the close idiom to signal termination.</p>
   </li>
   <li>
 <p>C7. Beware: one sender goroutine risks blocking indefinitely when writing on a channel if there is no goroutine left receiving from it.</p>
 </li>
   <li>
-<p>C8. When designing a goroutine which provides service throught channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
+<p>C8. When designing a goroutine which provides service through channels, and at some point a running goroutine is no longer needed, consider exactly how it will finish. Otherwise, unused goroutines may leak idly servicing an unattended channel.</p>
 </li>
   <li>
     <p>C9. Keep Dave Cheney's Four Channel Axioms in mind:</p>
