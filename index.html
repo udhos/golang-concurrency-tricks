@@ -65,6 +65,12 @@
 <li>
 <p>C10. 'select' never selects a blocking case.</p>
 </li>
+<li>
+<p>C11. Do not close a channel from one goroutine while writing to it from another goroutine.</p>
+<q>Closing and writing to a channel from distinct goroutines causes a race condition.</q>
+<br>
+<a href="https://stackoverflow.com/questions/47714470/go-race-condition-when-closing-a-go-channel">https://stackoverflow.com/questions/47714470/go-race-condition-when-closing-a-go-channel</a>
+</li>
 </ul>
 
 <h2>Goroutine Hints</h2>
